@@ -1,5 +1,6 @@
 #define BACKWARD_HAS_DW 1
 #include "backward.hpp"
+
 namespace backward
 {
 backward::SignalHandling sh;
@@ -81,7 +82,7 @@ void
 test1( )
 {
     Mat img;
-    Mat img1 = imread( "/home/gao/IMG_1.png", CV_LOAD_IMAGE_GRAYSCALE );
+    Mat img1 = imread( "/home/gao/IMG_1.png", IMREAD_GRAYSCALE );
 
     sys_utils::tic::TicTocPart time;
 
@@ -91,7 +92,7 @@ test1( )
     std::cout << "sumPixelRow cost " << time.toc( ) << " ms\n";
 
     cv::Mat img2;
-    normalize( img, img2, 0, 255, CV_MINMAX );
+    normalize( img, img2, 0, 255, NORM_MINMAX );
     Mat imageIntegralNorm;
     convertScaleAbs( img2, imageIntegralNorm );
 
@@ -104,7 +105,7 @@ void
 test2( )
 {
     Mat img;
-    Mat img1 = imread( "/home/gao/IMG_1.png", CV_LOAD_IMAGE_GRAYSCALE );
+    Mat img1 = imread( "/home/gao/IMG_1.png", IMREAD_GRAYSCALE );
 
     sys_utils::tic::TicTocPart time;
 
@@ -114,7 +115,7 @@ test2( )
     std::cout << "sumPixelRow cost " << time.toc( ) << " ms\n";
 
     cv::Mat img2;
-    normalize( img, img2, 0, 255, CV_MINMAX );
+    normalize( img, img2, 0, 255, NORM_MINMAX );
     Mat imageIntegralNorm;
     convertScaleAbs( img2, imageIntegralNorm );
 

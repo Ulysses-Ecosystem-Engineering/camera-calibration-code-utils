@@ -10,10 +10,11 @@ find_package(catkin REQUIRED
     std_msgs
     )
 
-#set(EIGEN_INCLUDE_DIR "/usr/local/include/eigen3")
+set(EIGEN_INCLUDE_DIR "/usr/include/eigen3")
 find_package(Eigen3 REQUIRED)
 find_package(OpenCV REQUIRED)
 find_package(Ceres REQUIRED)
+find_package(cv_bridge REQUIRED)
 
 catkin_package(
     INCLUDE_DIRS include
@@ -26,6 +27,7 @@ include_directories(
     ${catkin_INCLUDE_DIRS}
     ${EIGEN3_INCLUDE_DIR}
      )
+include_directories("include/code_utils")
 include_directories("include")
 
 add_library(polynomial STATIC
